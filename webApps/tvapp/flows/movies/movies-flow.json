@@ -1,0 +1,8 @@
+{
+  "id": "movies",
+  "description": "Flow main",
+  "defaultPage": "movies-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

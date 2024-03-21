@@ -1,0 +1,153 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Cast",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/MovieInfo",
+            "description": "MovieInfo"
+        }
+    ],
+    "paths": {
+        "/movie/{movie_id}/credits": {
+            "parameters": [
+                {
+                    "name": "movie_id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "operationId": "getMovieMovie_idCredits",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMovieMovie_idCredits"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getMovieMovie_idCredits/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany",
+                    "queryParameters": {
+                        "api_key": "e3956afc22c88a9131fda623b2296d17"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetMovieMovie_idCredits": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "cast": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "adult": {
+                                    "type": "boolean"
+                                },
+                                "gender": {
+                                    "type": "integer"
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "known_for_department": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "original_name": {
+                                    "type": "string"
+                                },
+                                "popularity": {
+                                    "type": "number"
+                                },
+                                "profile_path": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "cast_id": {
+                                    "type": "integer"
+                                },
+                                "character": {
+                                    "type": "string"
+                                },
+                                "credit_id": {
+                                    "type": "string"
+                                },
+                                "order": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    },
+                    "crew": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "adult": {
+                                    "type": "boolean"
+                                },
+                                "gender": {
+                                    "type": "integer"
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "known_for_department": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "original_name": {
+                                    "type": "string"
+                                },
+                                "popularity": {
+                                    "type": "number"
+                                },
+                                "profile_path": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "credit_id": {
+                                    "type": "string"
+                                },
+                                "department": {
+                                    "type": "string"
+                                },
+                                "job": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

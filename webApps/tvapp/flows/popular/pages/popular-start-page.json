@@ -1,0 +1,71 @@
+{
+
+  "title": "",
+  "description": "",
+  "variables": {
+    "getPopularApiKeyE3956afc22c88a9131fda623b2296d17ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "3Tv/getPopularApi_keyE3956afc22c88a9131fda623b2296d17",
+        "keyAttributes": "id",
+        "itemsPath": "results",
+        "responseType": "page:getPopularApiKeyE3956afc22c88a9131fda623b2296d17Response"
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getPopularApiKeyE3956afc22c88a9131fda623b2296d17Response": {
+      "endpoint": "getPopularApi_keyE3956afc22c88a9131fda623b2296d17",
+      "service": "3Tv",
+      "path": "response"
+    },
+    "getPopularApiKeyE3956afc22c88a9131fda623b2296d17Response": {
+      "results": [
+        {
+          "id": "number",
+          "name": "string",
+          "overview": "string",
+          "popularity": "number",
+          "poster_path": "string",
+          "vote_average": "number",
+          "vote_count": "number"
+        }
+      ]
+    }
+  },
+  "chains": {},
+  "eventListeners": {},
+  "imports": {
+    "components": {
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-sp-profile-card": {
+        "path": "oj-sp/profile-card/loader"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-vb-list-item": {
+        "path": "vb/components/list-item/loader"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-avatar": {
+        "path": "ojs/ojavatar"
+      },
+      "oj-sample-flip-card": {
+        "path": "oj-sample/flip-card/loader"
+      },
+      "oj-rating-gauge": {
+        "path": "ojs/ojgauge"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      }
+
+    }
+  }
+}

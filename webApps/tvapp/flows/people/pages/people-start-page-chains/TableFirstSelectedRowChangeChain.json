@@ -1,0 +1,52 @@
+{
+  "description": "",
+  "root": "callRestEndpoint1",
+  "actions": {
+    "callRestEndpoint1": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "person/getPersonPersonid",
+        "uriParams": {
+          "personid": "{{ $variables.rowKey }}"
+        }
+      },
+      "outcomes": {
+        "failure": "fireNotification1",
+        "success": "assignVariablesActor"
+      }
+    },
+    "fireNotification1": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestEndpoint1.message.summary ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    },
+    "assignVariablesActor": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.actor": {
+          "source": "{{ $chain.results.callRestEndpoint1.body }}",
+          "auto": "always"
+        },
+        "$page.variables.opendrawer": {
+          "source": true
+        }
+      }
+    }
+  },
+  "variables": {
+    "rowKey": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    },
+    "rowData": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

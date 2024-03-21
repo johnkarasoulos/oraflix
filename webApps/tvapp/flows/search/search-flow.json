@@ -1,0 +1,11 @@
+{
+
+  "id": "search",
+  "description": "Flow main",
+  "defaultPage": "search-start",
+  "chains": {},
+  "services": {},
+  "types": {},
+  "variables": {
+  }
+}

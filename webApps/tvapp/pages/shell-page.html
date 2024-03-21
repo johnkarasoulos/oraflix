@@ -1,0 +1,19 @@
+<div>
+    <!-- for message notifications -->
+    <oj-messages id="vbDefaultNotifier" position="{}" display="general" messages="{{$page.variables.messagesADP}}" on-oj-close="[[$listeners.onMessageClose]]"></oj-messages>
+
+    <div >
+      <div >
+        <!-- Where Visual Pages will be rendered -->
+        <oj-vb-content id="vbRouterContent" class="vbcs-pages-module oj-flex-item" config="[[vbRouterFlow]]"></oj-vb-content>
+      </div>
+    </div>
+  </div>
+<div class="oj-flex" style="background-color:rgb( 34, 126, 158 );">
+  <footer role="contentinfo" class="oj-flex-item oj-sm-12 oj-md-12">
+      <!-- <oj-bind-if test="[[ $variables.shownav ]]"> -->
+      <!-- </oj-bind-if> -->
+      <oj-sp-in-app-navigation style="" navigation-data="[[ $variables.NavigationADP ]]"
+        on-sp-selection-action="[[$listeners.inAppNavigationSpSelectionAction]]"></oj-sp-in-app-navigation>
+  </footer>
+</div>

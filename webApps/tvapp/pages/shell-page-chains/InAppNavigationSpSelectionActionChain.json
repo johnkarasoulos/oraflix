@@ -1,0 +1,76 @@
+{
+  "description": "",
+  "root": "switchCurrentId",
+  "actions": {
+    "switchCurrentId": {
+      "module": "vb/action/builtin/switchAction",
+      "parameters": {
+        "caseValue": "[[ $variables.currentId ]]",
+        "possibleValues": [
+          "Search",
+          "Popular",
+          "Actors",
+          "Movies"
+        ]
+      },
+      "outcomes": {
+        "Search": "navigateToSearchSearchStart",
+        "Popular": "navigateToPopularPopularStart",
+        "Actors": "navigateToPeoplePeopleStartCopy",
+        "Movies": "navigateToMoviesMoviesStart"
+      }
+    },
+    "navigateToSearchSearchStart": {
+      "module": "vb/action/builtin/navigateAction",
+      "@dt": {
+        "targetType": "flow"
+      },
+      "parameters": {
+        "flow": "search",
+        "page": "search-start"
+      }
+    },
+    "navigateToPopularPopularStart": {
+      "module": "vb/action/builtin/navigateAction",
+      "@dt": {
+        "targetType": "flow"
+      },
+      "parameters": {
+        "flow": "popular",
+        "page": "popular-start"
+      }
+    },
+    "navigateToPeoplePeopleStartCopy": {
+      "module": "vb/action/builtin/navigateAction",
+      "@dt": {
+        "targetType": "flow"
+      },
+      "parameters": {
+        "flow": "people",
+        "page": "people-start_copy"
+      }
+    },
+    "navigateToMoviesMoviesStart": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "flow": "movies",
+        "page": "movies-start"
+      },
+      "@dt": {
+        "targetType": "flow"
+      }
+    }
+  },
+  "variables": {
+    "currentId": {
+      "required": true,
+      "type": "string",
+      "input": "fromCaller"
+    },
+    "previousId": {
+      "required": true,
+      "type": "string",
+      "input": "fromCaller"
+    }
+  }
+}

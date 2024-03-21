@@ -1,0 +1,205 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "MovieInfo",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/MovieInfo"
+        }
+    ],
+    "paths": {
+        "/movie/{movie_id}": {
+            "parameters": [
+                {
+                    "name": "movie_id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "operationId": "getMovieMovie_id",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMovieMovie_id"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getMovieMovie_id/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getOne",
+                    "queryParameters": {
+                        "api_key": "e3956afc22c88a9131fda623b2296d17"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetMovieMovie_id": {
+                "type": "object",
+                "properties": {
+                    "adult": {
+                        "type": "boolean"
+                    },
+                    "backdrop_path": {
+                        "type": "string"
+                    },
+                    "belongs_to_collection": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "poster_path": {
+                                "type": "string"
+                            },
+                            "backdrop_path": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "budget": {
+                        "type": "integer"
+                    },
+                    "genres": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "homepage": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "imdb_id": {
+                        "type": "string"
+                    },
+                    "original_language": {
+                        "type": "string"
+                    },
+                    "original_title": {
+                        "type": "string"
+                    },
+                    "overview": {
+                        "type": "string"
+                    },
+                    "popularity": {
+                        "type": "number"
+                    },
+                    "poster_path": {
+                        "type": "string"
+                    },
+                    "production_companies": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "logo_path": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "origin_country": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "production_countries": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "iso_3166_1": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "release_date": {
+                        "type": "string"
+                    },
+                    "revenue": {
+                        "type": "integer"
+                    },
+                    "runtime": {
+                        "type": "integer"
+                    },
+                    "spoken_languages": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "english_name": {
+                                    "type": "string"
+                                },
+                                "iso_639_1": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "tagline": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "video": {
+                        "type": "boolean"
+                    },
+                    "vote_average": {
+                        "type": "integer"
+                    },
+                    "vote_count": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}

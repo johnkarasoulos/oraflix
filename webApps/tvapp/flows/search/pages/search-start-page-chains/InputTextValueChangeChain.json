@@ -1,0 +1,20 @@
+{
+  "description": "",
+  "root": "fireDataProviderEvent",
+  "actions": {
+    "fireDataProviderEvent": {
+      "module": "vb/action/builtin/fireDataProviderEventAction",
+      "parameters": {
+        "target": "[[ $page.variables.getTv2ListSDP ]]",
+        "refresh": null
+      }
+    }
+  },
+  "variables": {
+    "value": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

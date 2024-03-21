@@ -1,0 +1,14 @@
+{
+  "description": "",
+  "root": "callComponentVoteDialogOpen",
+  "actions": {
+    "callComponentVoteDialogOpen": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('voteDialog') }}",
+        "method": "open"
+      }
+    }
+  },
+  "variables": {}
+}

@@ -1,0 +1,22 @@
+{
+  "root": "navigateToDetail",
+  "variables": {
+    "getTvTvId2Id": {
+      "type": "string",
+      "input": "fromCaller",
+      "required": true
+    }
+  },
+  "actions": {
+    "navigateToDetail": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "history": "push",
+        "page": "search-get-tv-tv-id2detail",
+        "params": {
+          "getTvTvId2Id": "[[ $chain.variables.getTvTvId2Id ]]"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "root": "assignVariablesNavigationADP",
+  "description": "",
+  "variables": {},
+  "actions": {
+    "assignVariablesNavigationADP": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.NavigationADP": {
+          "source": {
+            "data": [
+              {
+                "label": "Movies",
+                "id": "Movies",
+                "badgeValue": 0,
+                "icon": "oj-ux-ico-search"
+              },
+              {
+                "label": "TV",
+                "id": "Search",
+                "badgeValue": 0,
+                "icon": "oj-ux-ico-tv"
+              },
+              {
+                "label": "Popular",
+                "id": "Popular",
+                "badgeValue": 0,
+                "icon": "oj-ux-ico-badge-alt-5"
+              },
+              {
+                "label": "Actors",
+                "id": "Actors",
+                "badgeValue": 0,
+                "icon": "oj-ux-ico-contact-search"
+              }
+            ]
+          },
+          "reset": "none",
+          "auto": "always"
+        }
+      }
+    }
+  }
+}

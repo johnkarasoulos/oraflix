@@ -1,0 +1,67 @@
+<div>
+  <oj-sp-foldout-layout id="foldout_layout_Horizontal_page" animate="[[$page.variables.animate]]"
+    previous-step="[[$variables.previousStep]]" next-step="[[$variables.nextStep]]"
+    display-options.go-to-parent="[[$page.variables.goToParent]]"
+    display-options.bidirectional-navigation="[[$page.variables.bidirectionalNavigation]]"
+    on-sp-go-to-parent="[[$listeners.onSpGoToParent]]" selected-panel="{{$variables.selectedPanel}}"
+    on-sp-previous="[[$listeners.onSpPrevious]]" on-sp-next="[[$listeners.onSpNext]]" orientation='horizontal'
+    display-mode="[[$page.variables.displayMode]]">
+
+    
+    <oj-sp-horizontal-overview id="foldout_layout_h_overview" slot="overview"
+      item-title="[[ $variables.getMovieMovieId.title ]]" display-mode="[[$page.variables.displayMode]]"></oj-sp-horizontal-overview>
+    
+    <!-- the below is default slot, maximum 6 oj-sp-foldout-panel could be added -->
+    <oj-sp-foldout-panel-summarizing panel-title="Profile" class="profile-panel">
+      <!-- below div is default slot for the content of the first foldout panel -->
+      <div>
+        <oj-sp-profile-card primary-text="[[ $variables.getMovieMovieId.title ]]"
+          avatar.src='[[ "https://image.tmdb.org/t/p/w220_and_h330_face/"+$variables.getMovieMovieId.backdrop_path ]]'
+          primary-actions='[{"id":"Home","label":"Website","icon":"oj-ux-ico-information"}]'
+          on-sp-primary-action="[[$listeners.profileCardSpPrimaryAction]]"
+          secondary-text="[[ $variables.getMovieMovieId.tagline ]]"></oj-sp-profile-card>
+      </div>
+      <!-- Summary Slot: Summary Section of the first foldout panel -->
+      <div slot="summary"></div>
+    </oj-sp-foldout-panel-summarizing>
+    <oj-sp-foldout-panel-summarizing panel-title="Statistics" class="profile-panel">
+      <!-- below div is default slot for the content of the first foldout panel -->
+      <div>
+        <oj-bind-if test="[[ ($variables.rowIndex) !== undefined ]]">
+          <oj-form-layout readonly="true">
+            <oj-input-number value="[[ $variables.getMovieMovieId.budget ]]" readonly="true" label-hint="budget"
+              converter='{"options":{"style":"currency","currency":"USD","currencyFormat":"short"},"type":"number"}'></oj-input-number>
+            <oj-input-number value="[[ $variables.getMovieMovieId.revenue ]]" readonly="true" label-hint="revenue"
+              converter='{"options":{"style":"currency","currency":"USD","currencyFormat":"short"},"type":"number"}'
+              id="oj-input-number--1752069913-1"></oj-input-number>
+            <oj-status-meter-gauge value="{{ $variables.getMovieMovieId.revenue }}" metric-label.rendered="on"
+              plot-area.rendered="on" class="oj-sm-flex-initial" color="#00FF00" metric-label.text="$" max="1500000000"
+              labelled-by="oj-input-number--1752069913-1"></oj-status-meter-gauge>
+            <oj-input-number value="[[ $variables.getMovieMovieId.runtime ]]" readonly="true"
+              label-hint="Runtime in Minutes"></oj-input-number>
+          </oj-form-layout>
+        </oj-bind-if>
+      </div>
+      <!-- Summary Slot: Summary Section of the second foldout panel -->
+      <div slot="summary">
+        <oj-rating-gauge class="oj-sm-flex-initial" selected-state.color="#1E90FF" max="10"
+          value="{{ $variables.getMovieMovieId.vote_average }}" labelled-by="Audience Rating"></oj-rating-gauge>
+      </div>
+    </oj-sp-foldout-panel-summarizing>
+    <oj-sp-foldout-panel-summarizing panel-title="Overview" overflow-action-label="Cast Information"
+      on-sp-overflow-action="[[$listeners.summarizingFoldoutPanelSpOverflowAction]]">
+      <oj-input-text value="[[ $variables.getMovieMovieId.overview ]]" readonly="true" label-hint="overview"></oj-input-text>
+      <oj-input-text value="[[ $variables.getMovieMovieId.original_title ]]" readonly="true" label-hint="original title"
+        slot="summary"></oj-input-text>
+    </oj-sp-foldout-panel-summarizing>
+    <oj-sp-foldout-panel-summarizing panel-title="Movie Poster">
+      <img :src='[[ "https://image.tmdb.org/t/p/w220_and_h330_face/"+$variables.getMovieMovieId.poster_path ]]'>
+    </oj-sp-foldout-panel-summarizing>
+
+    
+    
+
+    
+    
+  </oj-sp-foldout-layout>
+</div>

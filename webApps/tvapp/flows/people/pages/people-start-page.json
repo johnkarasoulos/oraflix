@@ -1,0 +1,213 @@
+{
+
+  "title": "",
+  "description": "",
+  "variables": {
+    "actor": {
+      "type": "getPersonPersonid"
+    },
+    "getPersonListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "3Search/getPerson",
+        "keyAttributes": "id",
+        "itemsPath": "results",
+        "responseType": "page:getPersonResponse",
+        "uriParameters": {
+          "query": "{{ $variables.searchString }}"
+        }
+      }
+    },
+    "getPersonListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "3Search/getPerson",
+        "keyAttributes": "id",
+        "itemsPath": "results",
+        "responseType": "getPersonResponse2",
+        "uriParameters": {
+          "query": "{{ $variables.searchString }}"
+        }
+      }
+    },
+    "opendrawer": {
+      "type": "boolean"
+    },
+    "searchString": {
+      "type": "string",
+      "defaultValue": "Jennifer"
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getPersonPersonid": {
+      "endpoint": "getPersonPersonid",
+      "service": "person",
+      "path": "response"
+    },
+    "@decorators.getPersonResponse": {
+      "endpoint": "getPerson",
+      "service": "3Search",
+      "path": "response"
+    },
+    "@decorators.getPersonResponse2": {
+      "endpoint": "getPerson",
+      "service": "3Search",
+      "path": "response"
+    },
+    "getPersonPersonid": {
+      "adult": "boolean",
+      "also_known_as": "string[]",
+      "biography": "string",
+      "birthday": "string",
+      "deathday": "any",
+      "gender": "number",
+      "homepage": "any",
+      "id": "number",
+      "imdb_id": "string",
+      "known_for_department": "string",
+      "name": "string",
+      "place_of_birth": "string",
+      "popularity": "number",
+      "profile_path": "string"
+    },
+    "getPersonResponse": {
+      "results": [
+        {
+          "adult": "boolean",
+          "gender": "number",
+          "id": "number",
+          "known_for_department": "string",
+          "name": "string",
+          "popularity": "number",
+          "profile_path": "string"
+        }
+      ]
+    },
+    "getPersonResponse2": {
+      "results": [
+        {
+          "id": "number",
+          "name": "string",
+          "profile_path": "string"
+        }
+      ]
+    }
+  },
+  "chains": {
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chainId": "ButtonActionChain1"
+        }
+      ]
+    },
+    "dataManagementPageTemplateSpCancel": {
+      "chains": [
+        {
+          "chainId": "DataManagementPageTemplateSpCancelChain"
+        }
+      ]
+    },
+    "dataManagementPageTemplateSpPrimaryAction": {
+      "chains": [
+        {
+          "chainId": "DataManagementPageTemplateSpPrimaryActionChain"
+        }
+      ]
+    },
+    "listViewFirstSelectedItem": {
+      "chains": [
+        {
+          "chainId": "ListViewFirstSelectedItemChangeChain",
+          "parameters": {
+            "rowKey": "{{$event.detail.value.key}}",
+            "rowData": "{{$event.detail.value.data}}"
+          }
+        }
+      ]
+    },
+    "ojAvatarClick": {
+      "chains": [
+        {
+          "chainId": "AvatarClickChain",
+          "parameters": {
+            "detail": "{{ $event.detail }}"
+          }
+        }
+      ]
+    },
+    "ojButtonOjAction": {
+      "chains": [
+        {
+          "chainId": "ButtonActionChain",
+          "parameters": {
+            "detail": "{{ $event.detail }}"
+          }
+        }
+      ]
+    },
+    "ojTableFirstSelectedRow": {
+      "chains": [
+        {
+          "chainId": "TableFirstSelectedRowChangeChain",
+          "parameters": {
+            "rowKey": "{{$event.detail.value.key}}",
+            "rowData": "{{$event.detail.value.data}}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-drawer-popup": {
+        "path": "ojs/ojdrawerpopup"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-search": {
+        "path": "ojs/ojinputsearch"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-rating-gauge": {
+        "path": "ojs/ojgauge"
+      },
+      "oj-sp-data-management-page": {
+        "path": "oj-sp/data-management-page/loader"
+      },
+      "oj-sp-general-drawer-template": {
+        "path": "oj-sp/general-drawer-template/loader"
+      },
+      "oj-avatar": {
+        "path": "ojs/ojavatar"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      }
+
+    }
+  }
+}

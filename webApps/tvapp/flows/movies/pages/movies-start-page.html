@@ -1,0 +1,20 @@
+<oj-sp-welcome-page id="oj-sp-wp1" background-color="[[ $page.variables.backgroundColor ]]"
+  illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Movies Database" description-text="Search for your favorite" overline-text="Built with Visual Builder">
+  <oj-input-search slot="search" value="{{ $variables.movieSearch }}"></oj-input-search>
+  <oj-list-view data="[[$variables.getMovieListSDP]]" display="card">
+    <template slot="itemTemplate">
+      <oj-sp-object-card secondary-text='[["Language "+ $current.data.original_language ]]'
+        primary-text="[[ $current.data.title ]]"
+        primary-actions='[{"id":"Details","label":"Details","icon":"oj-ux-ico-information"}]'
+        image.src='[[ "https://image.tmdb.org/t/p/w220_and_h330_face/"+$current.data.poster_path ]]'
+        image.alt-text="No Poster" emphasized="true" on-sp-primary-action="[[$listeners.objectCardSpPrimaryAction]]"
+        secondary-text-line2='[["Released " + $current.data.release_date.substring(0,4) ]]'
+        secondary-text-line3='[[ "Avg Rating " + $current.data.vote_average ]]'></oj-sp-object-card>
+    </template>
+  </oj-list-view>
+
+</oj-sp-welcome-page>

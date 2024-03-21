@@ -1,0 +1,83 @@
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-12">
+    <oj-sp-foldout-layout id="foldout_layout_Horizontal_page" animate="[[$page.variables.animate]]"
+      previous-step="[[$variables.previousStep]]" next-step="[[$variables.nextStep]]"
+      display-options.go-to-parent="[[$page.variables.goToParent]]"
+      display-options.bidirectional-navigation="[[$page.variables.bidirectionalNavigation]]"
+      on-sp-go-to-parent="[[$listeners.onSpGoToParent]]" selected-panel="{{$variables.selectedPanel}}"
+      on-sp-previous="[[$listeners.onSpPrevious]]" on-sp-next="[[$listeners.onSpNext]]" orientation='horizontal'
+      display-mode="[[$page.variables.displayMode]]">
+
+    
+    <oj-sp-horizontal-overview id="foldout_layout_h_overview" slot="overview"
+      item-title="[[ $variables.getTvTvId2.name ]]" display-mode="[[$page.variables.displayMode]]"></oj-sp-horizontal-overview>
+    
+    <!-- the below is default slot, maximun 6 oj-sp-foldout-panel could be added -->
+    <oj-sp-foldout-panel panel-title="[[ $variables.getTvTvId2.name ]]" class="profile-panel">
+      <!-- below div is default slot for the content of the first foldout panel -->
+      <div>
+                <oj-avatar class="oj-flex-item oj-sm-flex-initial"
+                src="[[ 'https://image.tmdb.org/t/p/w220_and_h330_face/' + $variables.getTvTvId2.poster_path ]]"
+                size="xxl" shape="square"></oj-avatar>
+      </div>
+      <!-- Summary Slot: Summary Section of the second foldout panel -->
+      <div slot="summary"></div>
+      <oj-text-area label-hint="Summary" value="[[ $page.variables.getTvTvId2.overview ]]" readonly="true" rows="10"></oj-text-area>
+    </oj-sp-foldout-panel>
+
+    
+    <oj-sp-foldout-panel panel-title="Viewer Ranking" class="profile-panel">
+      <!-- below div is default slot for the content of the first foldout panel -->
+      <div>
+            <oj-status-meter-gauge value="{{ $variables.getTvTvId2.vote_average }}" orientation="circular"
+              metric-label.rendered="on" plot-area.rendered="on"
+              class="oj-sm-flex-initial oj-flex-item oj-sm-12 oj-md-11" style="max-width:100%;width:150px;height:150px;"
+              max="10" color="#FA8072"></oj-status-meter-gauge>
+      </div>
+      <!-- Summary Slot: Summary Section of the second foldout panel -->
+      <div slot="summary"></div>
+    </oj-sp-foldout-panel>
+
+    
+    <oj-vb-content slot="drilldown" config="[[vbRouterFlow]]"></oj-vb-content>
+    <oj-sp-foldout-panel panel-title="Show Details">
+      <oj-form-layout label-edge="inside" readonly="true">
+					
+        <oj-input-text value="[[ $page.variables.getTvTvId2.name ]]" readonly="true" label-hint="name" disabled="true"></oj-input-text>
+					
+        <oj-input-text value="[[ $page.variables.getTvTvId2.first_air_date ]]" readonly="true"
+          label-hint="first_air_date" disabled="true"></oj-input-text>
+					
+        <oj-input-number value="[[ $page.variables.getTvTvId2.number_of_seasons ]]" readonly="true"
+          label-hint="number_of_seasons"></oj-input-number>
+					
+        
+					
+        <oj-input-number value="[[ $page.variables.getTvTvId2.number_of_episodes ]]" readonly="true"
+          label-hint="number_of_episodes"></oj-input-number>
+					
+        <oj-input-text value="[[ $page.variables.getTvTvId2.original_name ]]" readonly="true"
+          label-hint="original_name"></oj-input-text>
+					
+        <oj-input-text value="[[ $page.variables.getTvTvId2.original_language ]]" readonly="true"
+          label-hint="original_language"></oj-input-text>
+					
+        <oj-input-number value="[[ $page.variables.getTvTvId2.popularity ]]" readonly="true" label-hint="popularity"></oj-input-number>
+					
+        <oj-input-text value="[[ $page.variables.getTvTvId2.tagline ]]" readonly="true" label-hint="tagline"></oj-input-text>
+					
+        <oj-input-text value="[[ $page.variables.getTvTvId2.status ]]" readonly="true" label-hint="status">
+					</oj-input-text>
+					
+        <oj-input-text value="[[ $page.variables.getTvTvId2.type ]]" readonly="true" label-hint="type">
+					</oj-input-text>
+				
+      </oj-form-layout>
+    </oj-sp-foldout-panel>
+    <oj-sp-foldout-panel panel-title="Poster">
+      <img :src="[[ 'https://image.tmdb.org/t/p/w220_and_h330_face/' + $variables.getTvTvId2.backdrop_path ]]">
+      
+    </oj-sp-foldout-panel>
+    </oj-sp-foldout-layout>
+  </div>
+</div>

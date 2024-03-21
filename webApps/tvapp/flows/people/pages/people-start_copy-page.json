@@ -1,0 +1,141 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "actor": {
+      "type": "getPersonPersonid"
+    },
+    "actorSearch": {
+      "type": "string",
+      "defaultValue": "Willis"
+    },
+    "getPersonListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "3Search/getPerson",
+        "keyAttributes": "id",
+        "itemsPath": "results",
+        "responseType": "getPersonResponse",
+        "uriParameters": {
+          "query": "{{ $variables.actorSearch }}"
+        }
+      }
+    },
+    "opendrawer": {
+      "type": "boolean",
+      "defaultValue": false
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getPersonPersonid": {
+      "endpoint": "getPersonPersonid",
+      "service": "person",
+      "path": "response"
+    },
+    "@decorators.getPersonResponse": {
+      "endpoint": "getPerson",
+      "service": "3Search",
+      "path": "response"
+    },
+    "getPersonPersonid": {
+      "adult": "boolean",
+      "also_known_as": "string[]",
+      "biography": "string",
+      "birthday": "string",
+      "deathday": "any",
+      "gender": "number",
+      "homepage": "any",
+      "id": "number",
+      "imdb_id": "string",
+      "known_for_department": "string",
+      "name": "string",
+      "place_of_birth": "string",
+      "popularity": "number",
+      "profile_path": "string"
+    },
+    "getPersonResponse": {
+      "results": [
+        {
+          "id": "number",
+          "known_for_department": "string",
+          "name": "string",
+          "profile_path": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain"
+        }
+      ]
+    },
+    "listViewFirstSelectedItem": {
+      "chains": [
+        {
+          "chain": "ListViewFirstSelectedItemChangeChain",
+          "parameters": {
+            "rowKey": "{{$event.detail.value.key}}",
+            "rowData": "{{$event.detail.value.data}}"
+          }
+        }
+      ]
+    },
+    "smartSearchPageTemplateSpPrimaryAction": {
+      "chains": [
+        {
+          "chain": "SmartSearchPageTemplateSpPrimaryActionChain"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-avatar": {
+        "path": "ojs/ojavatar"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-drawer-popup": {
+        "path": "ojs/ojdrawerpopup"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-search": {
+        "path": "ojs/ojinputsearch"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-rating-gauge": {
+        "path": "ojs/ojgauge"
+      },
+      "oj-sp-general-drawer-template": {
+        "path": "oj-sp/general-drawer-template/loader"
+      },
+      "oj-sp-smart-search-page": {
+        "path": "oj-sp/smart-search-page/loader"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      }
+    }
+  }
+}

@@ -1,0 +1,400 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "PopularTV",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.themoviedb.org/3/tv",
+            "description": "TVPopulars"
+        }
+    ],
+    "paths": {
+        "/popular": {
+            "get": {
+                "operationId": "getPopularApi_keyE3956afc22c88a9131fda623b2296d17",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetPopularApi_keyE3956afc22c88a9131fda623b2296d17"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getPopularApi_keyE3956afc22c88a9131fda623b2296d17/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                },
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "e3956afc22c88a9131fda623b2296d17"
+                        }
+                    }
+                ]
+            }
+        },
+        "/{tv_id}": {
+            "get": {
+                "summary": "Get show by ID",
+                "description": "Get info on a show by its id",
+                "operationId": "getTvTv_id2",
+                "parameters": [
+                    {
+                        "name": "tv_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": ""
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetTv_id"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getTvTv_id2/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "queryParameters": {
+                        "api_key": "e3956afc22c88a9131fda623b2296d17"
+                    },
+                    "actionHint": "getOne"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetPopularApi_keyE3956afc22c88a9131fda623b2296d17": {
+                "type": "object",
+                "properties": {
+                    "page": {
+                        "type": "integer"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "backdrop_path": {
+                                    "type": "string"
+                                },
+                                "first_air_date": {
+                                    "type": "string"
+                                },
+                                "genre_ids": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "origin_country": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "original_language": {
+                                    "type": "string"
+                                },
+                                "original_name": {
+                                    "type": "string"
+                                },
+                                "overview": {
+                                    "type": "string"
+                                },
+                                "popularity": {
+                                    "type": "number"
+                                },
+                                "poster_path": {
+                                    "type": "string"
+                                },
+                                "vote_average": {
+                                    "type": "integer"
+                                },
+                                "vote_count": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    },
+                    "total_pages": {
+                        "type": "integer"
+                    },
+                    "total_results": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "GetTv_id": {
+                "type": "object",
+                "properties": {
+                    "backdrop_path": {
+                        "type": "string"
+                    },
+                    "created_by": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "credit_id": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "gender": {
+                                    "type": "integer"
+                                },
+                                "profile_path": {
+                                    "type": "string",
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    },
+                    "episode_run_time": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "first_air_date": {
+                        "type": "string"
+                    },
+                    "genres": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "homepage": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "in_production": {
+                        "type": "boolean"
+                    },
+                    "languages": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "last_air_date": {
+                        "type": "string"
+                    },
+                    "last_episode_to_air": {
+                        "type": "object",
+                        "properties": {
+                            "air_date": {
+                                "type": "string"
+                            },
+                            "episode_number": {
+                                "type": "integer"
+                            },
+                            "id": {
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "overview": {
+                                "type": "string"
+                            },
+                            "production_code": {
+                                "type": "string"
+                            },
+                            "season_number": {
+                                "type": "integer"
+                            },
+                            "still_path": {
+                                "nullable": true
+                            },
+                            "vote_average": {
+                                "type": "integer"
+                            },
+                            "vote_count": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "next_episode_to_air": {
+                        "nullable": true
+                    },
+                    "networks": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "logo_path": {
+                                    "type": "string"
+                                },
+                                "origin_country": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "number_of_episodes": {
+                        "type": "integer"
+                    },
+                    "number_of_seasons": {
+                        "type": "integer"
+                    },
+                    "origin_country": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "original_language": {
+                        "type": "string"
+                    },
+                    "original_name": {
+                        "type": "string"
+                    },
+                    "overview": {
+                        "type": "string"
+                    },
+                    "popularity": {
+                        "type": "number"
+                    },
+                    "poster_path": {
+                        "type": "string"
+                    },
+                    "production_companies": {
+                        "type": "array",
+                        "items": {}
+                    },
+                    "production_countries": {
+                        "type": "array",
+                        "items": {}
+                    },
+                    "seasons": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "air_date": {
+                                    "type": "string"
+                                },
+                                "episode_count": {
+                                    "type": "integer"
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "overview": {
+                                    "type": "string"
+                                },
+                                "poster_path": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "season_number": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    },
+                    "spoken_languages": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "english_name": {
+                                    "type": "string"
+                                },
+                                "iso_639_1": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "tagline": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "vote_average": {
+                        "type": "number"
+                    },
+                    "vote_count": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}

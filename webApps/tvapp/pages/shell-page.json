@@ -1,0 +1,181 @@
+{
+
+  "description": "",
+  "routerFlow": "movies",
+  "variables": {
+    "navDataSource": {
+      "type": "vb/ArrayDataProvider2",
+      "description": "The model describing the flows in the app",
+      "defaultValue": {
+        "keyAttributes": "id",
+        "data": [{
+            "name": "Search",
+            "id": "search",
+            "iconClass": "vb-icon vb-icon-search-magnifying-glass"
+          },
+          {
+            "name": "Popular",
+            "id": "popular",
+            "iconClass": "vb-icon vb-icon-squares"
+          },
+          {
+            "name": "People",
+            "id": "people",
+            "iconClass": "vb-icon vb-icon-list"
+          }
+        ]
+      }
+    },
+    "messagesADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "keyAttributes": "id",
+        "itemType": "page:messageType"
+      }
+    },
+    "NavigationADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "Navigation",
+        "keyAttributes": "id"
+      }
+    },
+    "navigationADP2": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "data": "{{ $variables.navigationArray }}",
+        "itemType": "Navigation",
+        "keyAttributes": "id"
+      }
+    },
+    "navigationArray": {
+      "type": "Navigation[]",
+      "defaultValue": [
+        {
+          "label": "Movies",
+          "id": "Movies",
+          "badgeValue": 0,
+          "icon": "oj-ux-ico-search"
+        },
+        {
+          "label": "TV",
+          "id": "Search",
+          "badgeValue": 0,
+          "icon": "oj-ux-ico-search"
+        }
+      ]
+    },
+    "shownav": {
+      "type": "boolean",
+      "defaultValue": false
+    }
+  },
+  "metadata": {},
+  "types": {
+    "messageType": {
+      "id": "string",
+      "severity": "string",
+      "category": "string",
+      "summary": "string",
+      "detail": "string",
+      "timestamp": "string",
+      "autoTimeout": "number"
+    },
+    "Navigation": {
+      "badgeValue": "number",
+      "icon": "string",
+      "id": "any",
+      "label": "string"
+    }
+  },
+  "chains": {
+  },
+  "eventListeners": {
+    "application:navigateToItem": {
+      "chains": [{
+        "chainId": "navigationHandler",
+        "parameters": {
+          "item": "{{ $event.item }}"
+        }
+      }]
+    },
+    "inAppNavigationSpSelectionAction": {
+      "chains": [
+        {
+          "chainId": "InAppNavigationSpSelectionActionChain",
+          "parameters": {
+            "currentId": "{{$event.detail.currentId}}",
+            "previousId": "{{$event.detail.previousId}}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chainId": "loadshell"
+        }
+      ]
+    },
+    "vbNotification": {
+      "chains": [{
+        "chainId": "showNotification",
+        "parameters": {
+          "eventPayload": "{{ { id: $event.key, summary: $event.summary, detail: $event.message, severity: $event.type, autoTimeout: $event.displayMode === 'transient' ? 0 : -1, timestamp: oj.IntlConverterUtils.dateToLocalIso(new Date()) } }}"
+        }
+      }]
+    },
+    "onNavigation": {
+      "chains": [{
+        "chainId": "navigationHandler",
+        "parameters": {
+          "item": "{{ $event.detail.value }}",
+          "updatedFrom": "{{ $event.detail.updatedFrom }}"
+        }
+      }]
+    },
+    "onMessageClose": {
+      "chains": [{
+        "chainId": "closeNotificationHandler",
+        "parameters": {
+          "eventMessage": "{{ $event.detail.message }}"
+        }
+      }]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-messages": {
+        "path": "ojs/ojmessages"
+      },
+      "oj-menu": {
+        "path": "ojs/ojmenu"
+      },
+      "oj-menu-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-sp-in-app-navigation": {
+        "path": "oj-sp/in-app-navigation/loader"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      },
+      "oj-navigation-list": {
+        "path": "ojs/ojnavigationlist"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      }
+
+    }
+  },
+  "translations": {}
+}

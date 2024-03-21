@@ -1,0 +1,20 @@
+{
+  "description": "",
+  "root": "callComponentMethod1",
+  "actions": {
+    "callComponentMethod1": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ document.getElementById('actroDialog') }}",
+        "method": "close"
+      }
+    }
+  },
+  "variables": {
+    "detail": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

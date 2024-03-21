@@ -1,0 +1,396 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "backdrop_path": "/7gWnu3VeN9KqafnY7fbzcR4fvoN.jpg",
+            "first_air_date": "2013-01-14",
+            "genre_ids": [
+                18,
+                80,
+                9648
+            ],
+            "id": 61511,
+            "name": "Father Brown",
+            "origin_country": [
+                "GB"
+            ],
+            "original_language": "en",
+            "original_name": "Father Brown",
+            "overview": "Father Brown is based on G. K. Chesterton's detective stories about a Catholic priest who doubles as an amateur detective in order to try and solve mysteries.",
+            "popularity": 15.824,
+            "poster_path": "/4EtN7iprTVGOqJpNz6FK7wLjrQi.jpg",
+            "vote_average": 7.3,
+            "vote_count": 44
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "1954-10-03",
+            "genre_ids": [
+                35
+            ],
+            "id": 10118,
+            "name": "Father Knows Best",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Father Knows Best",
+            "overview": "Father Knows Best is an American radio and television comedy series",
+            "popularity": 23.173,
+            "poster_path": "/5uvDdhz7Fq2OceIbmmOVpk2cSwx.jpg",
+            "vote_average": 7,
+            "vote_count": 12
+        },
+        {
+            "backdrop_path": "/wcUsUDsvZZ58zhSFK1fqBwUxLa3.jpg",
+            "first_air_date": "1995-04-21",
+            "genre_ids": [
+                35
+            ],
+            "id": 1813,
+            "name": "Father Ted",
+            "origin_country": [
+                "GB"
+            ],
+            "original_language": "en",
+            "original_name": "Father Ted",
+            "overview": "A crazy comedy about three rather strange parish priests exiled to Craggy Island, a remote island off the Irish west coast.",
+            "popularity": 9.473,
+            "poster_path": "/zq3W23WnuKWAkk34Axx3hv3HduU.jpg",
+            "vote_average": 8,
+            "vote_count": 158
+        },
+        {
+            "backdrop_path": "/e8DrWhL7i7bKmLlLeFm6MeTX687.jpg",
+            "first_air_date": "1989-01-20",
+            "genre_ids": [
+                35,
+                80,
+                9648
+            ],
+            "id": 1270,
+            "name": "Father Dowling Mysteries",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Father Dowling Mysteries",
+            "overview": "Father Dowling Mysteries is an American television mystery series that aired from January 20, 1989 to May 2, 1991. Prior to the series, a TV movie aired on November 30, 1987. For its first season, the show was on NBC; it moved to ABC for its last two seasons. It is based on the adventures of the title character created by Ralph McInerny, in a series of mystery novels.\n\nThe series was produced by The Fred Siverman Company and Dean Hargrove Productions in association with Viacom Productions.",
+            "popularity": 7.557,
+            "poster_path": "/2i5jIo5pt0bdjZh2CbJk2YpWP0M.jpg",
+            "vote_average": 7.5,
+            "vote_count": 11
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "1968-05-05",
+            "genre_ids": [
+                35
+            ],
+            "id": 9864,
+            "name": "Father, Dear Father",
+            "origin_country": [
+                "GB"
+            ],
+            "original_language": "en",
+            "original_name": "Father, Dear Father",
+            "overview": "Patrick Glover is a divorced thriller novelist attempting to raise and keep the peace between his two teenage daughters.",
+            "popularity": 2.877,
+            "poster_path": "/dt2Bz4UimLjumfA4WUXbU2xIzD0.jpg",
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "backdrop_path": "/9OUDTqqSnCzI0fNeICBWbbvZRBN.jpg",
+            "first_air_date": "1969-09-17",
+            "genre_ids": [
+                35,
+                10751,
+                10762
+            ],
+            "id": 6137,
+            "name": "The Courtship of Eddie's Father",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "The Courtship of Eddie's Father",
+            "overview": "The Courtship of Eddie's Father is an American television sitcom based on the 1963 movie of the same name, which was based on the book written by Mark Toby. It tells the story of a widower, Tom Corbett, who is a magazine publisher, and his son, Eddie, who believes his father should marry, and manipulates situations surrounding the women his father is interested in. ABC had acquired the rights to the story; the series debuted on September 17, 1969, and was last broadcast on March 1, 1972.\n\nBixby received an Emmy nomination for the show.",
+            "popularity": 9.181,
+            "poster_path": "/dv5WDWnwmtfsC2VjKiBmGVny9pn.jpg",
+            "vote_average": 6.2,
+            "vote_count": 6
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "1961-09-29",
+            "genre_ids": [
+                35
+            ],
+            "id": 13514,
+            "name": "Father of the Bride",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Father of the Bride",
+            "overview": "Father of the Bride is an American sitcom that aired on CBS during the 1961-62 season. Produced by MGM Television, the series was based on the 1950 film of the same title. Cast members include Leon Ames as the father of the bride, Ruth Warrick as the mother, and Myrna Fahey as the bride.",
+            "popularity": 6.264,
+            "poster_path": null,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "backdrop_path": "/1KopFKFgqZHfXj51UZJI1kAwoeQ.jpg",
+            "first_air_date": "1974-09-26",
+            "genre_ids": [
+                80,
+                9648
+            ],
+            "id": 30283,
+            "name": "Father Brown",
+            "origin_country": [
+                "GB"
+            ],
+            "original_language": "en",
+            "original_name": "Father Brown",
+            "overview": "Father Brown was a Catholic priest who doubled as an amateur detective in order to solve mysteries.",
+            "popularity": 3.251,
+            "poster_path": "/kZQWxnhSPPKeGfpxEg8QSUn4HBr.jpg",
+            "vote_average": 6.7,
+            "vote_count": 3
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "1957-09-15",
+            "genre_ids": [
+                35
+            ],
+            "id": 10990,
+            "name": "Bachelor Father",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Bachelor Father",
+            "overview": "Bachelor Father is an American sitcom starring John Forsythe, Noreen Corcoran, and Sammee Tong. The series first premiered on CBS in September 1957 before moving to NBC for the third season in 1959. The series' fifth and final season aired on ABC from 1961 to 1962. A total of 157 episodes were aired. The series was based on \"A New Girl in His Life\", which aired on General Electric Theater on May 26, 1957.\n\nBachelor Father is the only primetime series ever to run in consecutive years on the three major televisions networks.",
+            "popularity": 3.251,
+            "poster_path": null,
+            "vote_average": 6,
+            "vote_count": 1
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "2004-08-31",
+            "genre_ids": [
+                16,
+                35
+            ],
+            "id": 441,
+            "name": "Father of the Pride",
+            "origin_country": [
+                "GB",
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Father of the Pride",
+            "overview": "Father of the Pride is an American animated television series that began broadcasting on NBC on August 31, 2004 and was part of a short-lived trend of CGI series in prime-time network TV.\n\nThe show, which was produced by Jeffrey Katzenberg and his company DreamWorks Animation, revolves around a family of white lions, the patriarch of which stars in a Siegfried & Roy show in Las Vegas. Despite heavy promotion, the show was unsuccessful and was canceled after one season. Transmission and production were also delayed by the real-life on-stage injury of Roy Horn.",
+            "popularity": 5.484,
+            "poster_path": "/4cLVwO7GPEyQVbeHDrQ9unko0dr.jpg",
+            "vote_average": 7.2,
+            "vote_count": 6
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "2009-07-20",
+            "genre_ids": [
+                18
+            ],
+            "id": 21515,
+            "name": "Father & Son",
+            "origin_country": [
+                "GB"
+            ],
+            "original_language": "en",
+            "original_name": "Father & Son",
+            "overview": "Father & Son is a four-part television crime thriller produced by Left Bank Pictures and Octagon Films for the British ITV network and the Irish broadcaster Raidió Teilifís Éireann. Written by Frank Deasy, the serial depicts the return of Michael O'Connor to his native Ireland, after spending several years imprisoned in the United Kingdom. A parallel storyline follows O'Connor's son and sister-in-law in Manchester.",
+            "popularity": 1.565,
+            "poster_path": null,
+            "vote_average": 9,
+            "vote_count": 2
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "1981-11-03",
+            "genre_ids": [
+                18,
+                37
+            ],
+            "id": 4808,
+            "name": "Father Murphy",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Father Murphy",
+            "overview": "A good-hearted frontiersman poses as a priest to start an orphanage for a group of kids whose homes have been destroyed by an evil mining manager.",
+            "popularity": 1.735,
+            "poster_path": null,
+            "vote_average": 10,
+            "vote_count": 1
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "1978-06-25",
+            "genre_ids": [
+                35
+            ],
+            "id": 24911,
+            "name": "Father, Dear Father",
+            "origin_country": [
+                "AU"
+            ],
+            "original_language": "en",
+            "original_name": "Father, Dear Father",
+            "overview": "The hugely successful British television series Father Dear Father is transplanted to Australia when novelist Patrick Glover and his assistant Nanny trek down under to write the great Australian crime novel, and end up supervising Patricks boisterous young nieces while their own father is abroad.",
+            "popularity": 0.726,
+            "poster_path": "/u2M9obGnroYKeQW4DZdqFWiShfP.jpg",
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "2010-10-10",
+            "genre_ids": [
+                18
+            ],
+            "id": 34303,
+            "name": "Single Father",
+            "origin_country": [
+                "GB"
+            ],
+            "original_language": "en",
+            "original_name": "Single Father",
+            "overview": "Dave is facing the seemingly impossible job of bringing up four kids alone after the sudden death of his wife. And things get even more complicated when he falls in love with his wife's best friend, Sarah. Single Father asks how soon is too soon to fall in love again?",
+            "popularity": 1.272,
+            "poster_path": "/pAgsjRAVUxzZssPUcQRx81YZh4D.jpg",
+            "vote_average": 7.4,
+            "vote_count": 7
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "1955-01-08",
+            "genre_ids": [],
+            "id": 18149,
+            "name": "Professional Father",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Professional Father",
+            "overview": "Professional Father is a 1955 CBS situation comedy television series starring Stephen Dunne as Dr. Tom Wilson, a child psychologist successful with his patients but less than effective with his own family. Barbara Billingsley, two years before she was cast as the concerned mother in Leave It to Beaver, played Tom's wife, Helen Wilson.Beverly Washburn, later in the Walt Disney film Old Yeller and in CBS's The New Loretta Young Show, starred as daughter Kathryn \"Kit\" Wilson. Ted Marc portrayed the son, Tom Wilson, Jr., or \"Twig\", who played for a baseball team called \"The Beavers\", ironic in view of Billingsley's later June Cleaver role. Billingsley's characters on both Professional Father and Leave It to Beaver had an aunt named Martha.\n\nPhyllis Coates and Joseph Kearns played the neighbors, Madge and Fred Allen. Ann O'Neal starred as the housekeeper \"Nana\", and Arthur Q. Bryan played Mr. Boggs, the handyman. The series was created and produced by Harry Kronman, directed by Sherman Marks, and partly written by Bob Schiller.\n\nIn the May 14 episode, Larry J. Blake appeared as a neighbor, Donald Peterson, whom Dr. Wilson invites on a fishing trip. Blake had the distinction of having been the first actor to portray Adolf Hitler in a film.",
+            "popularity": 1.461,
+            "poster_path": null,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "2013-09-18",
+            "genre_ids": [
+                10751,
+                35
+            ],
+            "id": 64971,
+            "name": "Father Figure",
+            "origin_country": [],
+            "original_language": "en",
+            "original_name": "Father Figure",
+            "overview": "Father Figure is a British comedy television series that was first broadcast on BBC One on 18 September 2013. In Ireland the series first aired on RTÉ Two in September 2013. The six-part series was written by Jason Byrne and directed by Nick Wood.",
+            "popularity": 1.387,
+            "poster_path": null,
+            "vote_average": 3,
+            "vote_count": 1
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "1978-09-24",
+            "genre_ids": [
+                35
+            ],
+            "id": 17683,
+            "name": "Bless Me Father",
+            "origin_country": [
+                "GB"
+            ],
+            "original_language": "en",
+            "original_name": "Bless Me Father",
+            "overview": "Bless Me Father is a British sitcom starring Arthur Lowe, Daniel Abineri, Gabrielle Daye, Patrick McAlinney, David Ryall, Derek Francis and Sheila Keith. It was aired on ITV from 1978 until 1981 and described the adventures of an Irish Catholic priest, Father Charles Duddleswell and his young curate in the fictional parish of St. Jude's in suburban London. 21 episodes, written by Peter De Rosa, were aired. De Rosa wrote the books on which the series was based using the pseudonym of Neil Boyd which was also the name of the young curate character; Boyd also served as the narrator in the series of novels upon which the series was based. It was made for the ITV network by London Weekend Television.\n\nThe series was set in 1950 and 1951 and marked a departure from the middle class 'bank manager' roles associated with Lowe such as that in Dad's Army. The other regular characters included Mrs Pring, the housekeeper, the hard-drinking Dr Daley, the non-religious neighbour Billy Buzzle, and abbess Reverend Mother Stephen.",
+            "popularity": 1.924,
+            "poster_path": "/ckBaARJvVS4iKVMwImMJEG2yhFC.jpg",
+            "vote_average": 6,
+            "vote_count": 1
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "1972-09-12",
+            "genre_ids": [
+                16,
+                35
+            ],
+            "id": 10487,
+            "name": "Wait Till Your Father Gets Home",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Wait Till Your Father Gets Home",
+            "overview": "Wait Till Your Father Gets Home is an animated sitcom",
+            "popularity": 4.367,
+            "poster_path": null,
+            "vote_average": 9,
+            "vote_count": 2
+        },
+        {
+            "backdrop_path": "/4fprfaN6IYGevyvwuAZpCk3Fekk.jpg",
+            "first_air_date": "2017-09-22",
+            "genre_ids": [
+                35,
+                10764
+            ],
+            "id": 74100,
+            "name": "Jack Whitehall: Travels with My Father",
+            "origin_country": [
+                "GB"
+            ],
+            "original_language": "en",
+            "original_name": "Jack Whitehall: Travels with My Father",
+            "overview": "Comic Jack Whitehall invites his stodgy, unadventurous father to travel with him to odd locations and events in an attempt to strengthen their bond.",
+            "popularity": 3.682,
+            "poster_path": "/4YmLWIECW3OE7NiP9uwUK35i2uH.jpg",
+            "vote_average": 6.9,
+            "vote_count": 13
+        },
+        {
+            "backdrop_path": null,
+            "first_air_date": "1953-11-22",
+            "genre_ids": [
+                35
+            ],
+            "id": 23240,
+            "name": "Life With Father",
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Life With Father",
+            "overview": "Life With Father is an American sitcom that aired on CBS from November 1953 to July 1955. The series centers on the patriarch of an upper-middle-class New York household family. It was the first live color program for network TV to originate in Hollywood.",
+            "popularity": 1.45,
+            "poster_path": null,
+            "vote_average": 0,
+            "vote_count": 0
+        }
+    ],
+    "total_pages": 6,
+    "total_results": 102
+}

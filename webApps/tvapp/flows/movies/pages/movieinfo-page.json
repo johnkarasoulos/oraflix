@@ -1,0 +1,223 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "animate": {
+      "type": "string",
+      "defaultValue": "auto"
+    },
+    "bidirectionalNavigation": {
+      "type": "boolean",
+      "defaultValue": true,
+      "input": "fromCaller"
+    },
+    "displayMode": {
+      "type": "string"
+    },
+    "getMovieMovieId": {
+      "type": "getMovieMovieIdResponse"
+    },
+    "goToParent": {
+      "type": "boolean",
+      "defaultValue": true,
+      "input": "fromCaller"
+    },
+    "nextStep": {
+      "type": "any",
+      "defaultValue": {}
+    },
+    "pageTitle": {
+      "type": "string",
+      "defaultValue": "Horizontal Overview Title"
+    },
+    "panelOneTitle": {
+      "type": "string",
+      "defaultValue": "Panel one title"
+    },
+    "panelTwoTitle": {
+      "type": "string",
+      "defaultValue": "Panel two title"
+    },
+    "parentPage": {
+      "type": "string",
+      "input": "fromCaller"
+    },
+    "previousStep": {
+      "type": "any"
+    },
+    "rowIndex": {
+      "type": "number",
+      "input": "fromUrl",
+      "description": "Zero-based index referring to the current row",
+      "onValueChanged": {
+        "chains": [
+          {
+            "chainId": "fetchChain",
+            "parameters": {
+              "limit": 3,
+              "offset": "{{ $page.variables.rowIndex > 0 ? ($page.variables.rowIndex - 1) : 0 }}"
+            }
+          },
+          {
+            "chain": "loadGetMovieMovieIdChain",
+            "parameters": {
+              "movieId": "{{ $variables.rowIndex }}"
+            }
+          }
+        ]
+      }
+    },
+    "selectedPanel": {
+      "type": "number",
+      "input": "fromUrl"
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getMovieMovieIdCreditsResponse2": {
+      "endpoint": "getMovieMovie_idCredits",
+      "service": "Cast",
+      "path": "response"
+    },
+    "@decorators.getMovieMovieIdResponse": {
+      "endpoint": "getMovieMovie_id",
+      "service": "MovieInfo",
+      "path": "response"
+    },
+    "getMovieMovieIdCreditsResponse2": {
+      "cast": [
+        {
+          "character": "string",
+          "id": "number",
+          "name": "string",
+          "profile_path": "string"
+        }
+      ]
+    },
+    "getMovieMovieIdResponse": {
+      "adult": "boolean",
+      "backdrop_path": "string",
+      "budget": "number",
+      "homepage": "string",
+      "id": "number",
+      "imdb_id": "string",
+      "original_language": "string",
+      "original_title": "string",
+      "overview": "string",
+      "popularity": "number",
+      "poster_path": "string",
+      "release_date": "string",
+      "revenue": "number",
+      "runtime": "number",
+      "status": "string",
+      "tagline": "string",
+      "title": "string",
+      "video": "boolean",
+      "vote_average": "number"
+
+    }
+
+  },
+  "eventListeners": {
+    "onSpGoToParent": {
+      "chains": [
+        {
+          "chainId": "goToParentChain",
+          "parameters": {
+            "parentPage": "{{ $page.variables.parentPage }}"
+          }
+        }
+      ]
+    },
+    "onSpNext": {
+      "chains": [
+        {
+          "chainId": "next",
+          "parameters": {
+            "event": "{{ $event }}"
+          }
+        }
+      ]
+    },
+    "onSpPrevious": {
+      "chains": [
+        {
+          "chainId": "previous",
+          "parameters": {
+            "event": "{{ $event }}"
+          }
+        }
+      ]
+    },
+    "profileCardSpPrimaryAction": {
+      "chains": [
+        {
+          "chain": "GoToHomePage",
+          "parameters": {
+            "homepage": "[[ $variables.getMovieMovieId.homepage ]]"
+          }
+        }
+      ]
+    },
+    "summarizingFoldoutPanelSpOverflowAction": {
+      "chains": [
+        {
+          "chain": "MovieCast"
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chainId": "firePageLayoutEventChain"
+        },
+        {
+          "chain": "loadGetMovieMovieIdChain",
+          "parameters": {
+            "movieId": "{{ $variables.rowIndex }}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-rating-gauge": {
+        "path": "ojs/ojgauge"
+      },
+      "oj-sp-foldout-layout": {
+        "path": "oj-sp/foldout-layout/loader"
+      },
+      "oj-sp-foldout-panel-summarizing": {
+        "path": "oj-sp/foldout-panel-summarizing/loader"
+      },
+      "oj-sp-horizontal-overview": {
+        "path": "oj-sp/horizontal-overview/loader"
+      },
+      "oj-sp-profile-card": {
+        "path": "oj-sp/profile-card/loader"
+      },
+      "oj-status-meter-gauge": {
+        "path": "ojs/ojgauge"
+      }
+    },
+    "modules": {
+      "ojValidationNumber": {
+        "path": "ojs/ojvalidation-number"
+      }
+    }
+  },
+  "@dt": {
+    "iconClass": "vbdt-dynamic-icon-18-icoFoldoutLayout48Svg"
+  }
+}

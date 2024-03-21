@@ -1,0 +1,66 @@
+<div class="oj-flex">
+  <oj-sp-welcome-page class="oj-flex-item oj-sm-12 oj-md-12" page-title="TV Shows"
+    description-text="Get info about your favorite show"
+    illustration-foreground="https://static.oracle.com/cdn/fnd/gallery/2107.1.0/images/illust-welcome-banner-fg-05.png"
+    overline-text="Created with Visual Builder" background-color="dark-slate">
+    <oj-list-view data="[[$page.variables.getTv2ListSDP]]" display="card" selection-mode="single"
+      id="oj-list-view-793928105-1"
+      on-first-selected-item-changed="[[ $page.listeners.oj_list_view_793928105_1SelectionChanged ]]"
+      scroll-policy="loadMoreOnScroll">
+				
+      <template slot="itemTemplate">
+					
+        <oj-list-item-layout>
+						
+          <li class="demo-card">
+							
+            <oj-action-card style="width:200px;">
+								
+              <div
+                class="oj-flex oj-sm-justify-content-space-between oj-sm-flex-direction-column oj-sm-align-items-center">
+									
+                <div style="align:center;" class="oj-flex-item oj-sm-flex-initial">
+										
+                  <oj-avatar size="xxl"
+                    src="[[ 'https://image.tmdb.org/t/p/w220_and_h330_face/'+$current.data.poster_path ]]">
+										</oj-avatar>
+									
+                </div>
+									
+                <div class="oj-line-clamp-1 oj-flex-item oj-sm-flex-initial">
+										
+                  <oj-bind-text value="[[$current.data.name]]"></oj-bind-text>
+									
+                </div>
+									
+                <div class="oj-flex-item oj-sm-flex-initial">
+										
+                  <oj-bind-text value="[[ $current.data.original_language ]]"></oj-bind-text>
+									
+                </div>
+									
+                <oj-rating-gauge value="{{ $current.data.vote_average/2 }}" class="oj-sm-flex-initial oj-flex-item"
+                  style="max-width:100%;">
+									</oj-rating-gauge>
+								
+              </div>
+								
+              <span slot="secondary" class="oj-typography-body-sm oj-text-color-secondary"></span>
+								
+              <span>
+
+        </span>
+							
+            </oj-action-card>
+						
+          </li>
+					
+        </oj-list-item-layout>
+				
+      </template>
+			
+    </oj-list-view>
+    <oj-input-search slot="search" value="{{ $variables.searchString }}" placeholder="TV Show Name"
+      class="oj-form-control-max-width-md"></oj-input-search>
+  </oj-sp-welcome-page>
+</div>

@@ -1,0 +1,36 @@
+{
+  "root": "loadGetTvTvId2",
+  "actions": {
+    "loadGetTvTvId2": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "3Tv/getTvTv_id2",
+        "uriParams": {
+          "tv_id": "{{ $page.variables.getTvTvId2Id }}"
+        },
+        "responseType": "page:getTvTvId2Response"
+      },
+      "outcomes": {
+        "success": "assignPayload",
+        "failure": "fireErrorNotification"
+      }
+    },
+    "assignPayload": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.getTvTvId2": {
+          "source": "[[ $chain.results.loadGetTvTvId2.body || $chain.results.loadGetTvTvId2.content ]]"
+        }
+      }
+    },
+    "fireErrorNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "summary": "Could not load data",
+        "message": "[[ 'Could not load data: status ' + $chain.results.loadGetTvTvId2.payload.status ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    }
+  }
+}

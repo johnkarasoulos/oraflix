@@ -1,0 +1,35 @@
+{
+  "variables": {
+    "getTvTvId2Id": {
+      "type": "string",
+      "input": "fromCaller",
+      "defaultValue": ""
+    }
+  },
+  "root": "assignVariable",
+  "actions": {
+    "assignVariable": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.oj_list_view_793928105_1SelectedId": {
+          "source": "[[ $chain.variables.getTvTvId2Id ]]"
+        }
+      },
+      "outcomes": {
+        "success": "navigateToPage1"
+      }
+    },
+    "navigateToPage1": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "page": "search-get-tv-tv-id2detail",
+        "params": {
+          "getTvTvId2Id": "{{ $variables.getTvTvId2Id }}",
+          "rowIndex": "{{ $variables.getTvTvId2Id }}",
+          "parentPage": "search-start",
+          "bidirectionalNavigation": false
+        }
+      }
+    }
+  }
+}

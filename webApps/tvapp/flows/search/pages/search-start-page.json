@@ -1,0 +1,108 @@
+{
+
+  "title": "",
+  "description": "",
+  "variables": {
+    "getTv2ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "3Search/getTv2",
+        "keyAttributes": "id",
+        "itemsPath": "results",
+        "responseType": "page:getTv2Response",
+        "uriParameters": {
+          "query": "{{ $variables.searchString }}"
+        }
+      }
+    },
+    "oj_list_view_793928105_1SelectedId": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "searchString": {
+      "type": "string",
+      "persisted": "session",
+      "defaultValue": "Team"
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getTv2Response": {
+      "endpoint": "getTv2",
+      "service": "3Search",
+      "path": "response"
+    },
+    "getTv2Response": {
+      "results": [
+        {
+          "id": "number",
+          "name": "string",
+          "original_language": "string",
+          "poster_path": "string",
+          "vote_average": "number"
+        }
+      ]
+    }
+  },
+  "chains": {
+  },
+  "eventListeners": {
+    "emptyStateSpPrimaryAction": {
+      "chains": [
+        {
+          "chainId": "EmptyStateSpPrimaryActionChain"
+        }
+      ]
+    },
+    "getTvTvId2DetailButtonClicked": {
+      "chains": [
+        {
+          "chainId": "navigateToGetTvTvId2DetailChain",
+          "parameters": {
+            "getTvTvId2Id": "[[ $page.variables.oj_list_view_793928105_1SelectedId ]]"
+          }
+        }
+      ]
+    },
+    "oj_list_view_793928105_1SelectionChanged": {
+      "chains": [
+        {
+          "chainId": "oj_list_view_793928105_1ChangeSelectionChain",
+          "parameters": {
+            "getTvTvId2Id": "[[ $event.detail.value.key || '' ]]"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-action-card": {
+        "path": "ojs/ojactioncard"
+      },
+      "oj-input-search": {
+        "path": "ojs/ojinputsearch"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-vb-list-item": {
+        "path": "vb/components/list-item/loader"
+      },
+      "oj-rating-gauge": {
+        "path": "ojs/ojgauge"
+      },
+      "oj-avatar": {
+        "path": "ojs/ojavatar"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      }
+
+    }
+  }
+}

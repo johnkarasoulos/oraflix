@@ -1,0 +1,23 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="[[ $variables.MovieTitle ]]" overline-text="Movie Cast" description-text="Who played who"
+  background-color="dark-lilac">
+  <oj-list-view data="[[$variables.getMovieMovieIdCreditsListSDP]]">
+    <template slot="itemTemplate">
+      <oj-list-item-layout>
+        <oj-avatar class="oj-flex-item oj-sm-flex-initial" slot="leading" size="lg" background="green" shape="circle"
+          src='[[ "https://image.tmdb.org/t/p/w220_and_h330_face/"+$current.data.profile_path ]]'
+          initials="[[ $current.data.name.substring(2) ]]"></oj-avatar>
+        <div slot="overline">
+          <oj-bind-text value="[[ $current.data.character ]]"></oj-bind-text>
+        </div>
+        <div>
+          <oj-bind-text value="[[ $current.data.name ]]"></oj-bind-text>
+        </div>
+      </oj-list-item-layout>
+    </template>
+  </oj-list-view>
+
+</oj-sp-welcome-page>

@@ -1,0 +1,111 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "person",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.themoviedb.org/3",
+            "description": "3"
+        }
+    ],
+    "paths": {
+        "/person/{personid}": {
+            "get": {
+                "operationId": "getPersonPersonid",
+                "parameters": [
+                    {
+                        "name": "personid",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "123"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetPersonPersonid"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getPersonPersonid/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "queryParameters": {
+                        "api_key": "e3956afc22c88a9131fda623b2296d17"
+                    },
+                    "actionHint": "getOne"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetPersonPersonid": {
+                "type": "object",
+                "properties": {
+                    "adult": {
+                        "type": "boolean"
+                    },
+                    "also_known_as": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "biography": {
+                        "type": "string"
+                    },
+                    "birthday": {
+                        "type": "string"
+                    },
+                    "deathday": {
+                        "nullable": true
+                    },
+                    "gender": {
+                        "type": "integer"
+                    },
+                    "homepage": {
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "imdb_id": {
+                        "type": "string"
+                    },
+                    "known_for_department": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "place_of_birth": {
+                        "type": "string"
+                    },
+                    "popularity": {
+                        "type": "number"
+                    },
+                    "profile_path": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

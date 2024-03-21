@@ -1,0 +1,127 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Movies",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/Search"
+        }
+    ],
+    "paths": {
+        "/movie": {
+            "get": {
+                "operationId": "getMovie",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "Team"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMovie"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getMovie/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany",
+                    "queryParameters": {
+                        "api_key": "e3956afc22c88a9131fda623b2296d17"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetMovie": {
+                "type": "object",
+                "properties": {
+                    "page": {
+                        "type": "integer"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "adult": {
+                                    "type": "boolean"
+                                },
+                                "backdrop_path": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "genre_ids": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "original_language": {
+                                    "type": "string"
+                                },
+                                "original_title": {
+                                    "type": "string"
+                                },
+                                "overview": {
+                                    "type": "string"
+                                },
+                                "popularity": {
+                                    "type": "number"
+                                },
+                                "poster_path": {
+                                    "type": "string"
+                                },
+                                "release_date": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "video": {
+                                    "type": "boolean"
+                                },
+                                "vote_average": {
+                                    "type": "integer"
+                                },
+                                "vote_count": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    },
+                    "total_pages": {
+                        "type": "integer"
+                    },
+                    "total_results": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,187 @@
+{
+
+  "title": "getTvTv_id2 Detail",
+  "description": "Displays getTvTv_id2 record",
+  "variables": {
+    "animate": {
+      "type": "string",
+      "defaultValue": "auto"
+    },
+    "bidirectionalNavigation": {
+      "type": "boolean",
+      "defaultValue": false,
+      "input": "fromCaller"
+    },
+    "displayMode": {
+      "type": "string"
+    },
+    "getTvTvId2": {
+      "type": "page:getTvTvId2Response"
+    },
+    "getTvTvId2Id": {
+      "type": "string",
+      "required": true,
+      "input": "fromUrl"
+    },
+    "goToParent": {
+      "type": "boolean",
+      "defaultValue": true,
+      "input": "fromCaller"
+    },
+    "nextStep": {
+      "type": "any",
+      "defaultValue": {}
+    },
+    "pageTitle": {
+      "type": "string",
+      "defaultValue": "Show Information"
+    },
+    "panelOneTitle": {
+      "type": "string",
+      "defaultValue": "Panel One Title"
+    },
+    "panelTwoTitle": {
+      "type": "string",
+      "defaultValue": "Panel Two Title"
+    },
+    "parentPage": {
+      "type": "string",
+      "input": "fromCaller"
+    },
+    "previousStep": {
+      "type": "any"
+    },
+    "rowIndex": {
+      "type": "number",
+      "input": "fromUrl",
+      "description": "Zero-based index referring to the current row",
+      "onValueChanged": {
+        "chains": [
+          {
+            "chainId": "fetchChain",
+            "parameters": {
+              "limit": 3,
+              "offset": "{{ $page.variables.rowIndex > 0 ? ($page.variables.rowIndex - 1) : 0 }}"
+            }
+          }
+        ]
+      }
+    },
+    "selectedPanel": {
+      "type": "number",
+      "input": "fromUrl"
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getTvTvId2Response": {
+      "endpoint": "getTvTv_id2",
+      "service": "3Tv",
+      "path": "request"
+    },
+    "getTvTvId2Response": {
+      "backdrop_path": "string",
+      "first_air_date": "string",
+      "genres": "object[]",
+      "homepage": "string",
+      "id": "number",
+      "name": "string",
+      "number_of_episodes": "number",
+      "number_of_seasons": "number",
+      "original_language": "string",
+      "original_name": "string",
+      "overview": "string",
+      "popularity": "number",
+      "poster_path": "string",
+      "status": "string",
+      "tagline": "string",
+      "type": "string",
+      "vote_average": "number",
+      "vote_count": "number"
+    }
+  },
+  "chains": {
+  },
+  "eventListeners": {
+    "backButtonClicked": {
+      "chains": [
+        {
+          "chainId": "goBackChain"
+        }
+      ]
+    },
+    "onSpGoToParent": {
+      "chains": [
+        {
+          "chainId": "goToParentChain",
+          "parameters": {
+            "parentPage": "{{ $page.variables.parentPage }}"
+          }
+        }
+      ]
+    },
+    "onSpNext": {
+      "chains": [
+        {
+          "chainId": "next",
+          "parameters": {
+            "event": "{{ $event }}"
+          }
+        }
+      ]
+    },
+    "onSpPrevious": {
+      "chains": [
+        {
+          "chainId": "previous",
+          "parameters": {
+            "event": "{{ $event }}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+{
+          "chainId": "loadGetTvTvId2Chain"
+        },
+        {
+          "chainId": "firePageLayoutEventChain"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-sp-foldout-layout": {
+        "path": "oj-sp/foldout-layout/loader"
+      },
+      "oj-sp-foldout-panel": {
+        "path": "oj-sp/foldout-panel/loader"
+      },
+      "oj-sp-horizontal-overview": {
+        "path": "oj-sp/horizontal-overview/loader"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-avatar": {
+        "path": "ojs/ojavatar"
+      },
+      "oj-status-meter-gauge": {
+        "path": "ojs/ojgauge"
+      }
+
+    }
+  }
+}

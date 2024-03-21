@@ -1,0 +1,23 @@
+<div class="oj-flex">
+  <oj-sp-welcome-page class="oj-flex-item oj-sm-12 oj-md-12" background-color="dark-pine"
+    page-title="Most Popular TV Shows" description-text="Top shows this week">
+    <oj-list-view class="" data="[[$page.variables.getPopularApiKeyE3956afc22c88a9131fda623b2296d17ListSDP]]"
+      selection-mode="single" display="card">
+      <template slot="itemTemplate">
+        <oj-list-item-layout >
+          <oj-sp-profile-card
+            avatar.src="[[ 'https://image.tmdb.org/t/p/w220_and_h330_face/' + $current.data.poster_path ]]"
+            primary-text="[[ $current.data.name ]]" badge.status="neutral" badge.style="subtle"
+            secondary-text="[[ $current.data.overview ]]">
+            <oj-form-layout slot="body">
+              <oj-rating-gauge value="{{ $current.data.vote_average/2 }}" class="oj-sm-flex-initial"
+                style="max-width:100%;"></oj-rating-gauge>
+            </oj-form-layout>
+          </oj-sp-profile-card>
+        </oj-list-item-layout>
+
+    
+      </template>
+    </oj-list-view>
+  </oj-sp-welcome-page>
+</div>

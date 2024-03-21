@@ -1,0 +1,287 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "3 Search",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.themoviedb.org/3/search",
+            "description": "3 Search"
+        }
+    ],
+    "paths": {
+        "/tv": {
+            "get": {
+                "operationId": "getTv2",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "api_key",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "e3956afc22c88a9131fda623b2296d17"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetTv"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getTv2/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/tv/{tv_id}": {},
+        "/person": {
+            "get": {
+                "summary": "Find Actor",
+                "operationId": "getPerson",
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetPerson"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getPerson/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "queryParameters": {
+                        "api_key": "e3956afc22c88a9131fda623b2296d17"
+                    },
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetTv": {
+                "type": "object",
+                "properties": {
+                    "page": {
+                        "type": "integer"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "backdrop_path": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "first_air_date": {
+                                    "type": "string"
+                                },
+                                "genre_ids": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "origin_country": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "original_language": {
+                                    "type": "string"
+                                },
+                                "original_name": {
+                                    "type": "string"
+                                },
+                                "overview": {
+                                    "type": "string"
+                                },
+                                "popularity": {
+                                    "type": "number"
+                                },
+                                "poster_path": {
+                                    "type": "string",
+                                    "nullable": true
+                                },
+                                "vote_average": {
+                                    "type": "integer"
+                                },
+                                "vote_count": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    },
+                    "total_pages": {
+                        "type": "integer"
+                    },
+                    "total_results": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "GetPerson": {
+                "type": "object",
+                "properties": {
+                    "page": {
+                        "type": "integer"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "adult": {
+                                    "type": "boolean"
+                                },
+                                "gender": {
+                                    "type": "integer"
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "known_for": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "adult": {
+                                                "type": "boolean"
+                                            },
+                                            "backdrop_path": {
+                                                "type": "string"
+                                            },
+                                            "genre_ids": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "id": {
+                                                "type": "integer"
+                                            },
+                                            "media_type": {
+                                                "type": "string"
+                                            },
+                                            "original_language": {
+                                                "type": "string"
+                                            },
+                                            "original_title": {
+                                                "type": "string"
+                                            },
+                                            "overview": {
+                                                "type": "string"
+                                            },
+                                            "poster_path": {
+                                                "type": "string"
+                                            },
+                                            "release_date": {
+                                                "type": "string"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "video": {
+                                                "type": "boolean"
+                                            },
+                                            "vote_average": {
+                                                "type": "integer"
+                                            },
+                                            "vote_count": {
+                                                "type": "integer"
+                                            },
+                                            "first_air_date": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "origin_country": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "original_name": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "known_for_department": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "popularity": {
+                                    "type": "number"
+                                },
+                                "profile_path": {
+                                    "type": "string",
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    },
+                    "total_pages": {
+                        "type": "integer"
+                    },
+                    "total_results": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "backgroundColor": {
+      "type": "string",
+      "defaultValue": "dark-ocean"
+    },
+    "getMovieListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "Movies/getMovie",
+        "keyAttributes": "id",
+        "itemsPath": "results",
+        "responseType": "getMovieResponse",
+        "uriParameters": {
+          "query": "{{ $variables.movieSearch }}"
+        }
+      }
+    },
+    "illustrationBackground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-02.png"
+    },
+    "illustrationForeground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-02.png"
+    },
+    "imageStretch": {
+      "type": "string",
+      "defaultValue": "none"
+    },
+    "mobileImage": {
+      "type": "string",
+      "defaultValue": "on"
+    },
+    "movieSearch": {
+      "type": "string",
+      "defaultValue": "Trek",
+      "persisted": "session"
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getMovieResponse": {
+      "endpoint": "getMovie",
+      "service": "Movies",
+      "path": "response"
+    },
+    "getMovieResponse": {
+      "results": [
+        {
+          "id": "number",
+          "original_language": "string",
+          "poster_path": "string",
+          "release_date": "string",
+          "title": "string",
+          "vote_average": "number"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "objectCardSpPrimaryAction": {
+      "chains": [
+        {
+          "chain": "GoToMovieInfo",
+          "parameters": {
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-input-search": {
+        "path": "ojs/ojinputsearch"
+      },
+      "oj-list-item-layout": {
+        "path": "ojs/ojlistitemlayout"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-sp-object-card": {
+        "path": "oj-sp/object-card/loader"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      }
+    }
+  }
+}

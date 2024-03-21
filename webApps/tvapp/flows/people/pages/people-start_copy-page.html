@@ -1,0 +1,57 @@
+<oj-sp-smart-search-page page-title="Actors Database" page-subtitle="Search for your favorite" display-mode="mixed"
+  primary-action.label="Vote" primary-action.display="on"
+  on-sp-primary-action="[[$listeners.smartSearchPageTemplateSpPrimaryAction]]">
+  <oj-input-search slot="search" value="{{ $variables.actorSearch }}"></oj-input-search>
+  <oj-list-view data="[[$variables.getPersonListSDP]]"
+    on-first-selected-item-changed="[[$listeners.listViewFirstSelectedItem]]" selection-mode="single">
+    <template slot="itemTemplate">
+      <oj-list-item-layout>
+        <oj-avatar class="oj-flex-item oj-sm-flex-initial"
+          src="[[ 'https://image.tmdb.org/t/p/w220_and_h330_face/'+$current.data.profile_path ]]" slot="leading"
+          size="lg" shape="circle"></oj-avatar>
+        <div>
+          <oj-bind-text value="[[ $current.data.name ]]"></oj-bind-text>
+        </div>
+        <div slot="tertiary">
+          <oj-bind-text value="[[ $current.data.known_for_department ]]"></oj-bind-text>
+        </div>
+      </oj-list-item-layout>
+    </template>
+  </oj-list-view>
+</oj-sp-smart-search-page>
+<oj-drawer-popup slot="innerBottom" opened="{{ $variables.opendrawer }}" edge="end">
+  <oj-sp-general-drawer-template drawer-title="[[ $variables.actor.name ]]"
+    drawer-subtitle="[[ $variables.actor.known_for_department ]]">
+    <oj-avatar size="xl" src="[[ 'https://image.tmdb.org/t/p/w220_and_h330_face/'+$variables.actor.profile_path ]]"
+      on-click="[[$listeners.ojAvatarClick]]" shape="circle" background="green"></oj-avatar>
+    <oj-form-layout readonly="true">
+
+
+      <oj-input-text label-hint="Born" value="{{ $variables.actor.place_of_birth }}"></oj-input-text>
+
+
+      <oj-input-date label-hint="Birthday" readonly="true" value="{{ $variables.actor.birthday }}">
+      </oj-input-date>
+      <oj-input-text label-hint="Place of Birth" value="{{ $variables.actor.place_of_birth }}">
+      </oj-input-text>
+
+
+      <oj-text-area label-hint="Biography" value="{{ $variables.actor.biography }}" rows="14" readonly="true">
+      </oj-text-area>
+
+
+
+    </oj-form-layout>
+  </oj-sp-general-drawer-template>
+</oj-drawer-popup>
+<oj-dialog style="display:none" dialog-title="Your Ranking" id="voteDialog">
+  <oj-form-layout slot="body">
+    <h5>
+      <oj-bind-text value="[[ $variables.actor.name ]]"></oj-bind-text>
+    </h5>
+    <oj-rating-gauge value="0" style="max-width:100%;"></oj-rating-gauge>
+  </oj-form-layout>
+  <div slot="footer">
+    <oj-button on-oj-action="[[$listeners.buttonAction]]">Vote</oj-button>
+  </div>
+</oj-dialog>

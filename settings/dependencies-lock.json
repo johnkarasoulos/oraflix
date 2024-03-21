@@ -1,0 +1,65 @@
+{
+    "component-dependencies": {
+        "oj-sample": {
+            "version": "8.0.0",
+            "components": {
+                "flip-card": "8.0.0",
+                "drawer": "8.0.0"
+            }
+        },
+        "oj-sp": {
+            "version": "2310.0.1",
+            "components": {
+                "data-switcher": "2310.0.1",
+                "header-general-overview": "2310.0.1",
+
+                "object-card": "2310.0.1",
+                "fa-css": "2310.0.1",
+                "data-management-page": "2310.0.1",
+                "empty-state": "2310.0.1",
+                "header-navigation": "2310.0.1",
+                "in-app-navigation": "2310.0.1",
+                "overflow": "2310.0.1",
+                "general-drawer-template": "2310.0.1",
+                "smart-search-page": "2310.0.1",
+                "common": "2310.0.1",
+                "foldout-panel": "2310.0.1",
+                "header-create-edit": "2310.0.1",
+                "internal-resources": "2310.0.1",
+                "css-additions": "2310.0.1",
+                "bottom-drawer-template": "2310.0.1",
+                "profile-card": "2310.0.1",
+                "timestamp": "2310.0.1",
+                "list-item-template": "2310.0.1",
+                "welcome-page-pattern": "2310.0.1",
+                "common-util": "2310.0.1",
+                "common-strings": "2310.0.1",
+                "primary-action-feedback": "2310.0.1",
+                "header-welcome-banner": "2310.0.1",
+                "welcome-page": "2310.0.1",
+                "data-provider": "2310.0.1",
+                "summarizing-collection": "2310.0.1",
+                "filter-chip": "2310.0.1",
+                "pillar-theme": "2310.0.1",
+                "card-footer": "2310.0.1",
+                "smart-filters": "2310.0.1",
+                "list-section": "2310.0.1",
+                "foldout-panel-summarizing": "2310.0.1",
+                "foldout-layout-horizontal-pattern": "2310.0.1",
+                "foldout-layout": "2310.0.1",
+                "horizontal-overview": "2310.0.1"
+
+            }
+        },
+        "oj-dynamic": {
+            "version": "14.1.2",
+            "components": {
+                "shared": "14.1.2",
+                "form": "14.1.2",
+                "utils": "14.1.2",
+                "bind-field": "14.1.2",
+                "providers": "14.1.2"
+            }
+        }
+    }
+}

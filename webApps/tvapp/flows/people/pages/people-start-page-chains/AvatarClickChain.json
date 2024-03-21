@@ -1,0 +1,20 @@
+{
+  "description": "",
+  "root": "openUrl1",
+  "actions": {
+    "openUrl1": {
+      "module": "vb/action/builtin/openUrlAction",
+      "parameters": {
+        "url": "[[ $page.variables.actor.homepage ]]",
+        "windowName": "_blank"
+      }
+    }
+  },
+  "variables": {
+    "detail": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

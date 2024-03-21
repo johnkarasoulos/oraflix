@@ -1,0 +1,60 @@
+{
+  "description": "",
+  "root": "callRestGetPersonPersonid",
+  "actions": {
+    "assignVariablesOpendrawer": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.opendrawer": {
+          "source": true
+        }
+      }
+    },
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestGetPersonPersonid.message.summary ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    },
+    "callRestGetPersonPersonid": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "person/getPersonPersonid",
+        "uriParams": {
+          "personid": "{{ $variables.rowKey }}"
+        }
+      },
+      "outcomes": {
+        "failure": "fireNotification",
+        "success": "assignVariablesActor"
+      }
+    },
+    "assignVariablesActor": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.actor": {
+          "source": "{{ $chain.results.callRestGetPersonPersonid.body }}",
+          "auto": "always"
+        }
+      },
+      "outcomes": {
+        "success": "assignVariablesOpendrawer"
+      }
+    }
+  },
+  "variables": {
+    "rowKey": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    },
+    "rowData": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

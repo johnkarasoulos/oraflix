@@ -1,0 +1,10 @@
+{
+
+  "id": "people",
+  "description": "Flow main",
+  "defaultPage": "people-start_copy",
+  "chains": {},
+  "services": {},
+  "types": {},
+  "variables": {}
+}
